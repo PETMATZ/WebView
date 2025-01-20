@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from 'react';
 import { Alert, BackHandler } from 'react-native';
 import WebView, { WebViewNavigation } from 'react-native-webview';
 
-interface navType {}
-
 const WebViewContainer = () => {
 	const webViewRef = useRef<WebView>(null);
 	const [canGoBack, setCanGoBack] = useState(false);
@@ -29,7 +27,6 @@ const WebViewContainer = () => {
 		};
 	}, [canGoBack]);
 
-	// WebView의 내비게이션 상태 변경 처리
 	const onNavigationStateChange = (navState: WebViewNavigation) => {
 		setCanGoBack(navState.canGoBack);
 	};
